@@ -1,0 +1,71 @@
+<h1 id="cheap-lab">Cheap Lab</h1>
+
+<p>I needed to be able to setup a cheap electronics lab.  I have three children running around the house so time and money can be very tight :)</p>
+
+<p>I decided to use a PC sound card for the main lab parts.  Sound cards can act as, okay, signal generators and oscilloscopes.   The key to remember about this is that sound cards can not generate and measure continued DC voltage as they are designed to generate and detect waveforms.  Secondly, there will be quit a bit of distortion and noise in signals.</p>
+
+<p>All that aside, I’m going cheap and that is the price I will pay.  There is a few software options out their for sound card oscilloscopes and signal generators.  I have not tried them all but I did find two good options.</p>
+
+<ol>
+  <li><a href="http://www.daqarta.com/">Daqarta</a></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Has a very nice signal generator that is included free forever</p>
+  </li>
+  <li>
+    <p>Has a nice oscilloscope, however, after 30 days you have to pay 00 for it.</p>
+  </li>
+  <li>
+    <p>Later on I will show a much better option for cheap signal generators and oscilloscopes that only cost $200 so for a hacked idea, $100, no thank you.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><a href="http://www.zeitnitz.de/Christian/scope_en">Scope</a></li>
+</ol>
+
+<ul>
+  <li>
+    <p>Doesn’t have the bells and whistles of Daqarta but completely free.</p>
+  </li>
+  <li>
+    <p>The signal generator does not work near as well and is missing some functionality.</p>
+  </li>
+  <li>
+    <p>The oscilloscope is nice and works for my purposes</p>
+  </li>
+</ul>
+
+<p>I have taken to using both.  I am setting them up on the screen side by side.  Daqarta for the signal generator, and Scope for the ociloscope and this seems to have good results for me.</p>
+
+<h3 id="the-other-problem">The ‘Other’ Problem</h3>
+
+<p>The other problem simply put is voltage.  Input voltage can very from 0v to 3 -5v depending on the sound card; however, output voltage at full volume is only going to be about 756mv to 1v.  To address the output voltage I canalized a old set of PC speakers that used the 5v power some the PC usb to power up an amplifier.</p>
+
+<p>The amp was simply removed from the casing, feed 5v of the Vcc lines, plugged into the speaker jack on the computer, volume on the amp turned all the way up and I was getting about 3v.  This is a much more workable voltage.</p>
+
+<h3 id="the-test">The Test</h3>
+
+<p>To test the cheap lab setup I hooked a 4-wire delta fan up to the system.  The PWM control wire was attached to the left speaker out.  The RPM speed measurement wire to the microphone in, and then the fan fed 12v.</p>
+
+<p>Using the Daqarta signal generator I could set a PWM waveform with duty cycles from 25% to 85% and control the speed of the fan.  I used Scope to read the RPM from the wave form detected on the RPM monitoring wire.  Prof of concept complete.</p>
+
+<p><img src="http://1drv.ms/1lK0cvW" alt="" /></p>
+
+<p>My canalized audio amp.</p>
+
+<p><img src="http://1drv.ms/1lK0fbh" alt="" /></p>
+
+<p>A view from above</p>
+
+<h3 id="future-options">Future Options</h3>
+
+<p>This little lab setup will quickly help you realize just how much you will find these tools usefull.  That plan for me in the near future, Lord willing, is to get something like this <a href="https://www.sparkfun.com/products/9263">PC Oscilloscope</a></p>
+
+<p><img src="https://cdn.sparkfun.com//assets/parts/2/7/5/8/09263-4.jpg" alt="" /></p>
+
+<h3 id="warning"><strong>WARNING!</strong></h3>
+
+<p>Be very careful how much voltage you pour into your PC sound card.  If you put in too much, or have a large feedback spike you might be out a computer.  There are some PC boards on the internet that you can build for $20 that will fix some of the distortion issues, and protect your PC.  This might be worth a search and build.</p>
