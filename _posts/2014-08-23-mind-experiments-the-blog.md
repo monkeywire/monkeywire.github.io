@@ -1,6 +1,6 @@
 ---
 title: Mind Experiments &  This Blog
-type: post
+layout: post_page
 tags: mind, experiment, blog
 ---
 
