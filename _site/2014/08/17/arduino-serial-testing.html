@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title> Arduino Serial Communication in Linux  - Green Tea</title>
+		<!-- For responsive site
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="author" href="/humans.txt">
+		<meta name="description" content="Description Goes Here">
+		<link rel="stylesheet" href="/css/style.css">
+		<!--[if IE 7]>
+			<html class="ie7"> 
+			<link rel="stylesheet" type="text/css" href="/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		<!--[if IE 8]><html class="ie8"> <![endif]-->		
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="ico/favicon.png">	    
+	</head>
+	<body>
+	<!-- Header
+	    ================================================== -->
+	<header>
+
+	</header>
+
+	<main class="content">
+    <section class="container">
+    	<div class="row-fluid">
+    		<article class="home-icon">
+				<a href="/">
+					<i class="icon-home"></i> 
+				</a>
+			</article>
+			<article class="post">
+				<h2 class="content">Arduino Serial Communication in Linux</h2>
+				<h5>17 August 2014</h5>
+				<section>
+					<p>I was looking for a way to do some basic serial communication with an Arduino and PC.  The requirements that I was looking for was:</p>
+
+<ul>
+  <li>Easy to adapt to multiple projects</li>
+  <li>Little to no code preparation</li>
+  <li>Should have some kind of debug mode available</li>
+</ul>
+
+<p>I searched and was able to find some c, c++, c# and other libs for this.  I did experiment with some of them, however, somewhere along the line it dawned on me that there is no reason to use a library for the goals I wanted to achieve.  The Linux file system represents devices as files.  With standard input/output and some Linux craft I could achieve all my goals with little or no effort.</p>
+
+<p>I will not get into the details of these mostly basic Linux commands, if there is a command here you don’t recognize you can easily Google it and most of the time the top result will give you all the information you need.</p>
+
+<p>My first attempt at this did fail.  Remember that the device files in Linux are only accessible by the root account by default.</p>
+
+<p>I first tried ‘sudo echo “hello world” » /dev/ttyACM0’ but this gave me a permission denied error.  Note: ttyACM0 is the name used for my Ardunio.</p>
+
+<p>The problem here is that ‘sudo’ is only applied to echo and not the stdout redirect ‘»’</p>
+
+<p>To solve this problem we have to use a little program called. ‘Tee’.  ‘Tee’ basically takes and stdin and puts it out to a file or stdout.  So if we pipe the stdout to ‘Tee’ and then have ‘Tee’ write to the file with sudo permissions we should be good to go.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>‘echo “hello world”</td>
+      <td>sudo Tee /dev/ttyACM0’ does the trick no permission errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now to see what the Ardunio is sending back to me in real time: ‘sudo screen /dev/ttyACM0’, there ya go in one terminal you can send any data you want to the Ardunio and in the other terminal window you can use screen to see the return values in real-time.</p>
+
+<p>Of course this is a basic use case, but the principals here can be used in a endless number of ways to use all kinds of software and the stdin/stdout to communicate with the Arduino with little to no effort.</p>
+
+					<hr>
+				</section>
+				<section style="margin-bottom: 2em;">
+					 
+							<a rel="prev" class="a-hover"href="/2014/08/10/cheap-lab.html"><i class="icon-arrow-left"></i> Cheap Lab</a>
+						
+						
+				</section>
+			</article>
+		</div>
+	</section>
+</main>
+
+
+	<footer>
+		<div class="container">
+			<a href="http://richbray.me/frap/">Frappuccino</a> | Copyright or profile stuff goes here
+		</div>
+	</footer>
+
+	<!-- Footer
+	    ================================================== -->
+
+	<!-- Javascripts 
+	    ================================================= -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+		// analytics code
+    </script>	
+	</body>
+</html>
