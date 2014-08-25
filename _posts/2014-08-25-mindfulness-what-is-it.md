@@ -1,0 +1,11 @@
+---
+title: Mindfulness - What is it?
+page_layout: post
+tags: mindfulness
+---
+
+The main thing that I learned in today's lecture was this.  Mindfulness and meditation is much different then I had previous thought from the literature I have consumed.
+
+I always thought of meditation as clearing the mind of thoughts and focusing on nothing.  This is true, even by the Professors definition, but with one important point that must be made.  We will still have those random thoughts about what we are doing and what is happening, it is not about getting rid of them entirely, but more about knowing them for what they are unimportant.  These thoughts will still be going through out minds all the time but it is about treating more like clouds in the sky, completely unimportant and unnoticed.  When we do see them know there is no need for attention, if we do give some attention know there is no reason to give them that attention and moving on.
+
+This is much more in line with my own experiences and helps me feel that Mindfulness is so much more in reach, if not already achieved in some way.  I look forward to learning more.
