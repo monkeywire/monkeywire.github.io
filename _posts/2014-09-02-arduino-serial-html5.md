@@ -4,4 +4,4 @@ title: Arduino Serial HTML5 Interface Demo
 tags: arduino, serial, html5, c++
 ---
 
-YT( path = "www.youtube.com/embed/IBKmRTiL7U8")
+YT( path = "IBKmRTiL7U8")
