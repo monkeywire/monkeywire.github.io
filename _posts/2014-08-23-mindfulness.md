@@ -1,7 +1,7 @@
 ---
 title: Mindfulness
 tags: mindfulness, exploration
-layout: post_page
+page_layout: post
 ---
 
 
